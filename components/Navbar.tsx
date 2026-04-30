@@ -1,0 +1,8 @@
+'use client'
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useCursorStore } from '@/lib/store'
+gsap.registerPlugin(ScrollTrigger)
+const links = ['Work', 'Services', 'About', 'Contact']
+export default function Navbar() { const navRef = useRef<HTMLElement>(null); const { setHovering } = useCursorStore(); useEffect(() => { ScrollTrigger.create({ start: 'top -80px', onEnter: () => gsap.to(navRef.current, { backgroundColor: 'rgba(5,5,9,0.85)', backdropFilter: 'blur(16px)', borderBottomColor: 'rgba(255,255,255,0.07)', duration: 0.4, ease: 'power2.out' }), onLeaveBack: () => gsap.to(navRef.current, { backgroundColor: 'transparent', backdropFilter: 'blur(0px)', borderBottomColor: 'transparent', duration: 0.4, ease: 'power2.out' }) }) }, []); return <nav ref={navRef} style={{position:'fixed',top:0,left:0,right:0,zIndex:1000,display:'flex',alignItems:'center',justifyContent:'space-between',padding:'28px 48px',borderBottom:'1px solid transparent',transition:'none'}}><span className="font-display" style={{fontSize:18,fontWeight:700,color:'var(--lime)',letterSpacing:'0.06em'}}>FORMA</span><div style={{display:'flex',gap:40}}>{links.map((link)=><a key={link} href={`#${link.toLowerCase()}`} style={{fontSize:12,letterSpacing:'0.12em',textTransform:'uppercase',color:'var(--muted)',textDecoration:'none',transition:'color 0.2s ease'}} onMouseEnter={(e)=>{(e.target as HTMLElement).style.color='var(--off-white)'; setHovering(true)}} onMouseLeave={(e)=>{(e.target as HTMLElement).style.color='var(--muted)'; setHovering(false)}}>{link}</a>)}</div></nav> }

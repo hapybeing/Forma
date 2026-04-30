@@ -1,0 +1,1 @@
+export default function ServicesSection(){const services=['Brand Direction','Interactive Design','Realtime 3D','Web Engineering'];return <section id="services" className="px-12 py-28"><h2 className="text-h1 font-display mb-8">Services</h2><ul className="space-y-4">{services.map((s)=><li key={s} className="text-h2" style={{color:'var(--off-white)'}}>{s}</li>)}</ul></section>}

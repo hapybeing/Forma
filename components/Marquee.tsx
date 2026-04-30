@@ -1,0 +1,2 @@
+'use client'
+export default function Marquee(){return <section className="py-10 border-y" style={{borderColor:'var(--border)'}}><div className="overflow-hidden whitespace-nowrap"><div className="inline-block text-h2 font-display" style={{color:'var(--lime)',animation:'marq 24s linear infinite'}}>IMMERSIVE EXPERIENCES • BRAND SYSTEMS • INTERACTIVE WORLDS • IMMERSIVE EXPERIENCES • BRAND SYSTEMS • INTERACTIVE WORLDS • </div></div><style jsx>{`@keyframes marq {from{transform:translateX(0)}to{transform:translateX(-50%)}}`}</style></section>}
