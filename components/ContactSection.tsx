@@ -1,0 +1,1 @@
+export default function ContactSection(){return <section id="contact" className="px-12 py-32"><div className="text-label" style={{color:'var(--muted)'}}>Start a project</div><h2 className="text-h1 font-display mt-3">hello@forma.studio</h2></section>}
